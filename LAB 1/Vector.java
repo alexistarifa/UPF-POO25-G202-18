@@ -55,7 +55,7 @@ public class Vector {
         for(int i = 0;i<elems.length;i++){
             if(v.elems[i] == 0){
                 System.out.println("No se puede dividir entre 0");
-                System.exit(-1);
+                System.exit(0);
             }
             else{
                 result[i] = this.elems[i] / v.elems[i];
@@ -75,7 +75,7 @@ public class Vector {
         for(int i = 0;i<elems.length;i++){
             if(scalar == 0){
                 System.out.println("No se puede dividir entre 0");
-                System.exit(-1);
+                System.exit(0);
             }
             else{
                 result[i] = elems[i]/scalar;
