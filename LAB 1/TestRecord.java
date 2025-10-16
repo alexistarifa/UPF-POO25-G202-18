@@ -11,7 +11,7 @@ public class TestRecord {
         System.out.println("v3 = " + v3 + "\n");
         
         
-        System.out.println("=== MÉTODOS DE LA CLASE VECTOR ===\n");
+        System.out.println(" MÉTODES DE LA CLASSE VECTOR \n");
         System.out.println("Dimensión de v1: " + v1.getDim() + "\n");
         System.out.println("Suma (v1 + v2): " + v1.add(v2) + "\n");
         System.out.println("Resta (v1 - v2): " + v1.subtract(v2) + "\n");
@@ -25,19 +25,17 @@ public class TestRecord {
         Vector v4 = new Vector(4, 7.5);
         System.out.println("Vector creado con (dim=4, val=7.5): " + v4 + "\n" + "\n" );
         
-        System.out.println("=== MÉTODOS DE LA CLASE RECORD === \n");
+        System.out.println(" MÉTODES DE LA CLASSE RECORD  \n");
         Record r1 = new Record(v1, 10.5);
         Record r2 = new Record(v2, 25.0);
 
         System.out.println("Record 1: " + r1 + "\n");
         System.out.println("Record 2: " + r2 + "\n");
 
-        // Getters
         System.out.println("Input de r1: " + r1.getInput() + "\n");
         System.out.println("Output de r1: " + r1.getOutput() + "\n");
         System.out.println("Input de r2: " + r2.getInput() + "\n");
         System.out.println("Output de r2: " + r2.getOutput() + "\n");
-
     }
 }
 
