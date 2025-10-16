@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class Vector {
     private double[] elems;
     public Vector(double[] e){
@@ -110,15 +111,7 @@ public class Vector {
         return Math.sqrt(this.dotProduct(this));
     }
     public String toString() {
-        String s ="[";
-        for (int i = 0; i < elems.length; i++) {
-            s +=elems[i];
-            if (i < elems.length - 1) {
-                s +=",";
-            }
-        }
-        s += "]";
-        return s;
+        return Arrays.toString(elems);
     }  
 
 }
