@@ -53,7 +53,8 @@ public class Vector {
         double[] result = new double[elems.length];
         for(int i = 0;i<elems.length;i++){
             if(v.elems[i] == 0){
-                result[i] = 0;
+                System.out.println("No se puede dividir entre 0");
+                System.exit(-1);
             }
             else{
                 result[i] = this.elems[i] / v.elems[i];
@@ -72,7 +73,8 @@ public class Vector {
         double[] result = new double[elems.length];
         for(int i = 0;i<elems.length;i++){
             if(scalar == 0){
-                result[i] = 0;
+                System.out.println("No se puede dividir entre 0");
+                System.exit(-1);
             }
             else{
                 result[i] = elems[i]/scalar;
@@ -108,16 +110,15 @@ public class Vector {
         return Math.sqrt(this.dotProduct(this));
     }
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
+        String s ="[";
         for (int i = 0; i < elems.length; i++) {
-            sb.append(elems[i]);
+            s +=elems[i];
             if (i < elems.length - 1) {
-                sb.append(", ");
+                s +=",";
             }
         }
-        sb.append("]");
-        return sb.toString();
+        s += "]";
+        return s;
     }  
 
 }
