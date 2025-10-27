@@ -1,3 +1,4 @@
+package Lab1;
 public class Record {
     private Vector input;
     private double output;

@@ -1,3 +1,4 @@
+package Lab1;
 public class TestRecord {
     public static void main(String[] args){
         double[] double_v1 = {1.0,2.0,3.0};
