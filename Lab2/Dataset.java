@@ -47,7 +47,7 @@ public class Dataset {
             Record r = data.get(i);
             Vector sub = r.getInput().subtract(mean);
             Vector squared = sub.multiply(sub);
-            result = squared.add(squared);
+            result = result.add(squared);
         }
         Vector solution = result.divide_scalar(numRecords);
         return solution.sqrt();
@@ -78,7 +78,21 @@ public class Dataset {
         }
     return Math.sqrt(result/numRecords);
     }
-    
+    public StandardizedDataset standardize(){
+        Vector mi = meanInput();
+        Vector si = stdInput();
+        double mo = meanOutput();
+        double so = stdOutput();
+        Dataset dataset = this;
+        StandardizedDataset sd = new StandardizedDataset(dataset, mi, si, mo, so);
+        int numRecords = data.size();
+        for(int i = 0;i<numRecords;i++){
+            Record record = data.get(i);
+            Record record_sd = sd.transform(record);
+            sd.addRecord(record_sd);
+        }
+        return sd;
+    }
     public String toString(){
         return data.toString();
     }
