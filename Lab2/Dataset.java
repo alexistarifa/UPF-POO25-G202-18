@@ -36,8 +36,24 @@ public class Dataset {
         }
         return sum.divide_scalar(numRecords);
     }
+    public Vector stdInput(){
+        if(data.isEmpty()){
+            return new Vector(this.dim,0.0);
+        }
+        Vector result = new Vector(dim,0.0);
+        double numRecords = data.size();
+        Vector mean = meanInput();
+        for(int i = 0;i<numRecords;i++){
+            Record r = data.get(i);
+            Vector sub = r.getInput().subtract(mean);
+            Vector squared = sub.multiply(sub);
+            result = squared.add(squared);
+        }
+        Vector solution = result.divide_scalar(numRecords);
+        return solution.sqrt();
+    }
     public double meanOutput(){
-        double sum = 0;
+        double sum = 0.0;
         double numRecords = data.size();
         if(numRecords == 0.0){
             return sum;
@@ -48,4 +64,23 @@ public class Dataset {
         }
         return sum/numRecords;
     }
+    public double stdOutput(){
+        double result = 0.0;
+        int numRecords = data.size();
+        double mean = meanOutput();
+        if(numRecords == 0){
+            return result;
+        }
+        for(int i = 0;i<numRecords;i++){
+            Record r = data.get(i);
+            double sub = r.getOutput() - mean;
+            result += sub * sub;
+        }
+    return Math.sqrt(result/numRecords);
+    }
+    
+    public String toString(){
+        return data.toString();
+    }
 }
+
