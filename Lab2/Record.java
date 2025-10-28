@@ -14,6 +14,6 @@ public class Record {
         return this.output;
     }
     public String toString(){
-        return "Record [input = " + input.toString() +", output = "+output+"]";
+        return "Record [input = " + input.toString() +", output = "+output+"]\n";
     }
 }
