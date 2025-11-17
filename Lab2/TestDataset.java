@@ -37,7 +37,7 @@ public class TestDataset {
         
         System.out.println("\nPrueba del método transform() por separado:");
         Vector vNuevo = new Vector(new double[]{1.0, 1.0, 1.0});
-        Record rNuevo = new Record(vNuevo, 4.0); // Con output 4
+        Record rNuevo = new Record(vNuevo, 4.0); 
         Record rNuevoTransformado = standardizeddataset.transform(rNuevo);
         System.out.println("\nRecord original: " + rNuevo.toString());
         System.out.println("\nRecord transformado: " + rNuevoTransformado.toString());
