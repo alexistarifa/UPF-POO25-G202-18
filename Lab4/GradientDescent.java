@@ -27,6 +27,7 @@ public class GradientDescent extends Algorithm {
         }
         return suma.divide_scalar(n);
     }
+    @Override
     public Model solve(Dataset ds){
         Model modelo = new Model(ds.getDim());
         int maxIterations = 10000;
